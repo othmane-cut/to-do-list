@@ -1,7 +1,6 @@
 <div>
     <button (click)="onUserClick()">
-        <img [src]="pathimage" [alt]="name ">
-        <span>{{name}}</span>
+        <img [src]="pathimage()" [alt]="name()">
+        <span>{{name()}}</span>
     </button>
 </div>
-    
