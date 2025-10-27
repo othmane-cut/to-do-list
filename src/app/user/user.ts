@@ -1,27 +1,22 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users'; 
-import { sign } from 'node:crypto';
 
 const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 @Component({
   selector: 'app-user',
   imports: [],
   templateUrl: './user.html',
-  styleUrl: './user.css'
+  styleUrls: ['./user.css']
 })
 export class User {
- selectedUser = signal(DUMMY_USERS[randomeUserIndex]);
-// use get method to return path of image
-//  get pathImage(){
-//     return '../assets/users/' + this.selectedUser.avatar;
-//   }
+  @Input() avatar!: string;
+  @Input() name!: string;
 
-imagepath = computed(() => {
-    return '../assets/users/' + this.selectedUser().avatar;
-  });
+  get pathimage(): string {
+    return `../assets/users/${this.avatar}`;
+  }
 
   onUserClick() {
-    const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
-    this.selectedUser.set(DUMMY_USERS[randomeUserIndex]);
+  
   }
 }
