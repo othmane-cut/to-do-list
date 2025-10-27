@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ToDoList
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# to-do-list
+use anguler v20 for creat to do list 
+>>>>>>> 7e56b2672d0f6dcffaa46c3e504f9f236956e234
