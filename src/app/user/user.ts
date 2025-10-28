@@ -1,4 +1,4 @@
-import { Component, computed, Input,input } from '@angular/core';
+import { Component, computed, Input,input, Output,EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users'; 
 
 const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -13,6 +13,9 @@ export class User {
   //@Input({required: true}) name!: string;
   avatar = input.required<string>();
   name = input.required<string>();
+  id = input.required<string>();
+
+  @Output() userClick = new EventEmitter<string>();
 
   pathimage = computed
   (() => `../assets/users/${this.avatar()}`);
@@ -21,6 +24,6 @@ export class User {
   // }
 
   onUserClick() {
-  
+  this.userClick.emit(this.id());
   }
 }
