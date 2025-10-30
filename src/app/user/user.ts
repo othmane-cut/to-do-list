@@ -1,13 +1,10 @@
 import { Component, computed, Input,input, Output,EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users'; 
+import { UserShape } from './user.model';
 
 const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
-interface UserShape {
-  id: string;
-  name: string;
-  avatar: string;
-}
+
 @Component({
   selector: 'app-user',
   imports: [],
