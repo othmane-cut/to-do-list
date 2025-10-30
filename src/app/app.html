@@ -9,9 +9,13 @@
         </app-user >
          </li>
         }
-        </ul>
-        
-    <app-tasks [nameUser]="userSelected.name"></app-tasks>
-</main>
+       
+    </ul>
+    
+      @if(userSelected) {
+        <app-tasks [nameUser]="userSelected.name"></app-tasks>
+      } @else {
+        <p id="no-user-selected">tap to select a user</p>
+      }
 
-  
+</main>
