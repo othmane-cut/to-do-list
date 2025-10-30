@@ -9,21 +9,24 @@ const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrls: ['./user.css']
 })
 export class User {
-  //@Input({required: true}) avatar!: string;
-  //@Input({required: true}) name!: string;
-  avatar = input.required<string>();
-  name = input.required<string>();
-  id = input.required<string>();
+ /*@Input({required: true}) user !: {
+    id: string;
+    name: string;
+    avatar: string;
+  };*/
+ 
+  user = input.required<{ id: string; name: string; avatar: string }>();
+
 
   @Output() userClick = new EventEmitter<string>();
 
   pathimage = computed
-  (() => `../assets/users/${this.avatar()}`);
+  (() => `../assets/users/${this.user().avatar}`);
   // get pathimage(): string {
   //   return `../assets/users/${this.avatar}`;
   // }
 
   onUserClick() {
-  this.userClick.emit(this.id());
+  this.userClick.emit(this.user().id);
   }
 }

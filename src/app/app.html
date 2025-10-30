@@ -1,26 +1,28 @@
 <app-header/>
 <main>
     <ul id="users">
-         <li>
-            <app-user [id]="users[3].id" [avatar]="users[3].avatar" [name]="users[3].name" (userClick)="onSelectUser($event)">
-
-        </app-user ></li>
+        
         <li>
-            <app-user [id]="users[4].id" [avatar]="users[4].avatar" [name]="users[4].name" (userClick)="onSelectUser($event)">
+            <app-user [user]="users[4]" (userClick)="onSelectUser($event)">
 
         </app-user ></li>
-        <li><app-user [id]="users[1].id" [avatar]="users[1].avatar" [name]="users[1].name" (userClick)="onSelectUser($event)">
+        <li><app-user [user]="users[1]" (userClick)="onSelectUser($event)">
 
         </app-user >
     </li>
 
          <li>
-            <app-user [id]="users[0].id" [avatar]="users[0].avatar" [name]="users[0].name" (userClick)="onSelectUser($event)">
+            <app-user [user]="users[0]" (userClick)="onSelectUser($event)">
 
         </app-user ></li>
 
          <li>
-            <app-user [id]="users[5].id" [avatar]="users[5].avatar" [name]="users[5].name" (userClick)="onSelectUser($event)">
+            <app-user [user]="users[5]" (userClick)="onSelectUser($event)">
+
+        </app-user ></li>
+
+         <li>
+            <app-user [user]="users[3]" (userClick)="onSelectUser($event)">
 
         </app-user ></li>
 
