@@ -11,9 +11,9 @@
         }
        
     </ul>
-    
-      @if(userSelected) {
-        <app-tasks [nameUser]="userSelected.name"></app-tasks>
+
+    @if(userSelected) {
+        <app-tasks [idUser]="userSelected.id" [nameUser]="userSelected.name"></app-tasks>
       } @else {
         <p id="no-user-selected">tap to select a user</p>
       }
