@@ -2,6 +2,12 @@ import { Component, computed, Input,input, Output,EventEmitter } from '@angular/
 import { DUMMY_USERS } from '../dummy-users'; 
 
 const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+
+interface UserShape {
+  id: string;
+  name: string;
+  avatar: string;
+}
 @Component({
   selector: 'app-user',
   imports: [],
@@ -14,8 +20,8 @@ export class User {
     name: string;
     avatar: string;
   };*/
- 
-  user = input.required<{ id: string; name: string; avatar: string }>();
+
+  user = input.required<UserShape>();
 
 
   @Output() userClick = new EventEmitter<string>();
