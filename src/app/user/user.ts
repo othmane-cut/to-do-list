@@ -19,6 +19,7 @@ export class User {
   };*/
 
   user = input.required<UserShape>();
+  @Input({required : true}) selected !: boolean;
 
 
   @Output() userClick = new EventEmitter<string>();
