@@ -11,11 +11,16 @@ import { dummyTasks } from '../dummy-tasks';
 export class Tasks {
   @Input({ required: true }) nameUser!: string;
   @Input({ required: true }) idUser!: string;
-  task= dummyTasks;
+  tasks= dummyTasks;
 
 
   get tasksUser() {
-    return this.task.filter(task => task.userId === this.idUser);
+    return this.tasks.filter(task => task.userId === this.idUser);
+  }
+
+  onTaskCompleted(taskId: string) {
+    this.tasks =this.tasks.filter((task)=> task.id !== taskId);
+
   }
 
 
