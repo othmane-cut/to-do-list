@@ -4,12 +4,12 @@ import { Header } from './header/header';
 import { User } from "./user/user";
 import { DUMMY_USERS } from './dummy-users';
 import { Tasks } from './tasks/tasks';
-import { AddTask } from "./add-task/add-task";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [Header, User, Tasks, AddTask],
+  imports: [Header, User, Tasks, ],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
