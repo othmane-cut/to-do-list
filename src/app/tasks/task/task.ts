@@ -14,10 +14,14 @@ export class Task {
 
 @Output() Complet  = new EventEmitter<string>();
 
+
+
 ontaskComplete() {
   this.Complet.emit(this.task.id);  
 
 }
+
+
 
 
 }

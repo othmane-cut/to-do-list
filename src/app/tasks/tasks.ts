@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from "./task/task";
 import { dummyTasks } from '../dummy-tasks';
 
@@ -12,6 +12,7 @@ export class Tasks {
   @Input({ required: true }) nameUser!: string;
   @Input({ required: true }) idUser!: string;
   tasks= dummyTasks;
+@Output() addTask = new EventEmitter<boolean>();
 
 
   get tasksUser() {
@@ -22,6 +23,9 @@ export class Tasks {
     this.tasks =this.tasks.filter((task)=> task.id !== taskId);
 
   }
+  onAddTask() {
+  this.addTask.emit(true);
+}
 
 
 }
