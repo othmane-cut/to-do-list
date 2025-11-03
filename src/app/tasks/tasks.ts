@@ -30,4 +30,8 @@ export class Tasks {
  addNewTask() {
     this.addingNewTask = true;
  }
+
+ onCancelNewTask() {
+    this.addingNewTask = false;
+}
 }
