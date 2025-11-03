@@ -39,13 +39,7 @@ export class Tasks {
   }
 
   onAddNewTask(taskData: newTaskData) {
-    dummyTasks.push({
-      id: (dummyTasks.length + 1).toString(),
-      userId: this.idUser,
-      title: taskData.title,
-      summary: taskData.summary,
-      dueDate: taskData.dueDate
-    });
+    this.tasksService.onAddNewTask(taskData , this.idUser);
     this.addingNewTask = false;
   }
 }
