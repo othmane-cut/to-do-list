@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { task } from './task.model';
+import { Card } from "../../shareUI/card/card";
 
 
 @Component({
   selector: 'app-task',
-  imports: [],
+  imports: [Card],
   templateUrl: './task.html',
   styleUrl: './task.css'
 })

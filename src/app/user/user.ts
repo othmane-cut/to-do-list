@@ -1,13 +1,14 @@
 import { Component, computed, Input,input, Output,EventEmitter } from '@angular/core';
 import { DUMMY_USERS } from '../dummy-users'; 
 import { UserShape } from './user.model';
+import { Card } from "../shareUI/card/card";
 
 const randomeUserIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 
 
 @Component({
   selector: 'app-user',
-  imports: [],
+  imports: [Card],
   templateUrl: './user.html',
   styleUrls: ['./user.css']
 })
