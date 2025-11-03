@@ -3,6 +3,7 @@ import { Task } from "./task/task";
 import { dummyTasks } from '../dummy-tasks';
 import { NewTask } from './new-task/new-task';
 import {type newTaskData } from './task/task.model';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
@@ -14,36 +15,38 @@ export class Tasks {
   @Input({ required: true }) nameUser!: string;
   @Input({ required: true }) idUser!: string;
   addingNewTask = false
-  tasks= dummyTasks;
+  constructor(private tasksService: TasksService) {}
+ 
+ 
 
 
 
   get tasksUser() {
-    return this.tasks.filter(task => task.userId === this.idUser);
+    return this.tasksService.getUserTasks(this.idUser);
   }
 
   onTaskCompleted(taskId: string) {
-    this.tasks =this.tasks.filter((task)=> task.id !== taskId);
-
+    this.tasksService.removeTask(taskId);
   }
 
-
- addNewTask() {
+  // moved methods inside class so `this` refers to the class instance
+  addNewTask() {
     this.addingNewTask = true;
- }
+  }
 
- onCancelNewTask() {
+  onCancelNewTask() {
     this.addingNewTask = false;
-}
-  onAddNewTask(taskData: newTaskData) {
-   dummyTasks.push( {
-  id: (dummyTasks.length + 1).toString(),
-  userId: this.idUser,
-  title: taskData.title,
-  summary: taskData.summary,
-  dueDate: taskData.dueDate
-} );
-this.addingNewTask = false;
+  }
 
+  onAddNewTask(taskData: newTaskData) {
+    dummyTasks.push({
+      id: (dummyTasks.length + 1).toString(),
+      userId: this.idUser,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.dueDate
+    });
+    this.addingNewTask = false;
   }
 }
+
