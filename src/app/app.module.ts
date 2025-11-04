@@ -1,7 +1,7 @@
-// import { NgModule } from "@angular/core";
+import { NgModule } from "@angular/core";
 
 
-// @NgModule({
-//   declarations :[]
-// })
-// export class AppModule {}
+@NgModule({
+  declarations :[]
+})
+export class AppModule {}
