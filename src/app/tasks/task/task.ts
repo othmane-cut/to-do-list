@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output,inject } from '@angular/core';
-import { task } from './task.model';
+import { task } from './task.modeldata';
 import { Card } from "../../shareUI/card/card";
 import { DatePipe } from '@angular/common';
 import { TasksService } from '../tasks.service';
@@ -8,7 +8,7 @@ import { TasksService } from '../tasks.service';
 
 @Component({
   selector: 'app-task',
-  imports: [Card, DatePipe],
+  
   templateUrl: './task.html',
   styleUrl: './task.css'
 })

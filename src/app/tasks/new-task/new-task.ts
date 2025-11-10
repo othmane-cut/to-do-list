@@ -2,7 +2,7 @@ import { Component,Output,EventEmitter, signal, inject ,Input} from '@angular/co
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import {type newTaskData } from '../task/task.model';
+import {type newTaskData } from '../task/task.modeldata';
 import { TasksService } from '../tasks.service';
 
 

@@ -3,8 +3,8 @@ import { ɵEmptyOutletComponent } from "@angular/router";
 
 @Component({
   selector: 'app-card',
-  imports: [ɵEmptyOutletComponent],
-  templateUrl: './card.html',
+  
+ templateUrl: './card.html',
   styleUrl: './card.css'
 })
 export class Card {

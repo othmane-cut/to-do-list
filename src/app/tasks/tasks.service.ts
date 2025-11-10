@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { type newTaskData } from "./task/task.model";
+import { type newTaskData } from "./task/task.modeldata";
 
 
 @Injectable({

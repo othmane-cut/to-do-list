@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Task } from "./task/task";
 import { NewTask } from './new-task/new-task';
-import {type newTaskData } from './task/task.model';
+import {type newTaskData } from './task/task.modeldata';
 import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-tasks',
-  imports: [Task,NewTask,],
+  
   templateUrl: './tasks.html',
   styleUrl: './tasks.css'
 })
