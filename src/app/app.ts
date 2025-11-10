@@ -2,9 +2,7 @@
 
 import { Component } from '@angular/core';
 import { DUMMY_USERS } from './dummy-users';
-import { Header } from "./header/header";
-import { Tasks } from "./tasks/tasks";
-import { User } from "./user/user";
+
 
 
 
@@ -14,7 +12,7 @@ import { User } from "./user/user";
   
   templateUrl: './app.html',
   styleUrls: ['./app.css'],
-  imports: [Header, Tasks, User]
+ 
 })
 
 export class App {
